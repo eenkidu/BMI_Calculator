@@ -15,14 +15,24 @@ void printBMIStatus(double bmi) {
 
 int main() {
 	double height, weight, bmi;
-	std::cout << "Enter height(m):";
-	std::cin >> height;
-	std::cout << "Enter weight(kg):";
-	std::cin >> weight;
+	char choice = 'Y';
 
-	bmi = weight / (height * height);
-	std::cout << "Your BMI is:" << bmi << std::endl;
+		while (choice == 'Y'|| choice == 'y') {
+			std::cout << "Enter height(m):";
+			std::cin >> height;
+			std::cout << "Enter weight(kg):";
+			std::cin >> weight;
 
-	printBMIStatus(bmi);
+			bmi = weight / (height * height);
+			std::cout << "Your BMI is:" << bmi << std::endl;
+
+			printBMIStatus(bmi);
+			
+			std::cout << "Continue?(Y/N)";
+			std::cin >> choice;
+		}
+
+
+	std::cout << "Goodbye!" << std::endl;
 	return 0;
  }
